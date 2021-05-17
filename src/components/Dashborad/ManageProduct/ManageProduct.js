@@ -6,7 +6,11 @@ import { Table } from "react-bootstrap";
 const ManageProduct = ({ services }) => {
 
     const handleDeleteProduct = (id) =>{
-        
+        fetch(`http://localhost:5000/delete/${id}`,{
+          method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(result => console.log('deleted successfully');)
     }
 
   return (
@@ -30,7 +34,7 @@ const ManageProduct = ({ services }) => {
                 <button className="ml-4 mt-2 mr-2">
                   <FontAwesomeIcon icon={faEdit} />
                 </button>
-                <button style={{ color: "red" }}>
+                <button style={{ color: "red" }} onClick={() => handleDeleteProduct(service._id)}>
                   <FontAwesomeIcon icon={faTrashAlt} />
                 </button>
               </div>
