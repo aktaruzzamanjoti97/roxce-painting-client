@@ -8,6 +8,8 @@ import { useState } from "react";
 import AddService from "./components/Dashborad/AddService/AddService";
 import Dashboard from "./components/Dashborad/Dashboard/Dashboard";
 import ManageProducts from "./components/Dashborad/ManageProducts/ManageProducts";
+import Shipment from "./components/Dashborad/Shipment/Shipment";
+import Checkout from "./components/Dashborad/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -34,6 +36,12 @@ function App() {
           </Route>
           <Route path="/manageService">
             <ManageProducts />
+          </Route>
+          <Route path="/shipment/:id">
+            <Shipment />
+          </Route>
+          <Route path='/checkout/:id'>
+            <Checkout />
           </Route>
         </Switch>
       </Router>

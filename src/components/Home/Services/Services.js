@@ -1,8 +1,14 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "./Services.css";
+import { useHistory } from "react-router-dom";
 
 const Services = ({ service }) => {
+  let history = useHistory();
+  function handleClick(id) {
+    console.log(id);
+    history.push(`/checkout/${id}`);
+  }
   return (
     <div className="col-md-4 col-sm-6 col-12 py-3 text-center">
       <div className="rounded box-style" style={{}}>
@@ -15,7 +21,7 @@ const Services = ({ service }) => {
           <h4>{service.name}</h4>
           <p>Small Area: $ {service.smPrice}</p>
           <p>Large Area: $ {service.lgPrice}</p>
-          <Button variant="success">Get Our Service</Button>
+          <Button onClick={() => handleClick(service._id)} variant="success">Get Our Service</Button>
         </div>
       </div>
     </div>

@@ -1,36 +1,20 @@
 import React from "react";
 import Services from "../Services/Services";
 import "./OurServices.css";
-import interior1 from '../../../images/residencial-interior.png';
-import interior2 from '../../../images/commercial-interior.png';
-import interior3 from '../../../images/industrial-interior.png';
 import { useEffect } from "react";
 import { useState } from "react";
 
 const OurServices = () => {
 
-  const [ourServices, setOurServices] = useState([])
+  const [ourServices, setOurServices] = useState([]);
 
-  // const serviceData = [
-  //   {
-  //     name: "Residential Interior",
-  //     img: interior1,
-  //   },
-  //   {
-  //     name: "Commercial Interior",
-  //     img: interior2,
-  //   },
-  //   {
-  //     name: "Industrial Interior",
-  //     img: interior3,
-  //   },
-  // ];
 
   useEffect(() => {
     fetch(`http://localhost:5000/service`)
     .then(res => res.json())
     .then(data => setOurServices(data))
-  }, [ourServices])
+  }, [ourServices]);
+
 
   return (
     <div className="services-style">
