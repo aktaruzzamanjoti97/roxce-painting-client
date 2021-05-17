@@ -10,7 +10,7 @@ const ManageProduct = ({ services }) => {
           method: "DELETE"
         })
         .then(res => res.json())
-        .then(result => console.log('deleted successfully');)
+        .then(result => console.log('deleted successfully'))
     }
 
   return (
