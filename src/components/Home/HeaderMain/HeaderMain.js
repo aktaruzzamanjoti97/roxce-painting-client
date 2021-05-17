@@ -36,7 +36,7 @@ const HeaderMain = () => {
         <h1 className="header-text" style={{ color: "#66fcf1" }}>
           Painting Service
         </h1>
-        <h1 className="text-brand text-center header-text">Company</h1>
+        <h1 className="text-title text-center header-text">Company</h1>
 
         <div>
           <Button className="m-3" variant="success">

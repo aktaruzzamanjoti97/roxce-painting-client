@@ -4,27 +4,38 @@ import "./OurServices.css";
 import interior1 from '../../../images/residencial-interior.png';
 import interior2 from '../../../images/commercial-interior.png';
 import interior3 from '../../../images/industrial-interior.png';
+import { useEffect } from "react";
+import { useState } from "react";
 
 const OurServices = () => {
-  const serviceData = [
-    {
-      name: "Residential Interior",
-      img: interior1,
-    },
-    {
-      name: "Commercial Interior",
-      img: interior2,
-    },
-    {
-      name: "Industrial Interior",
-      img: interior3,
-    },
-  ];
+
+  const [ourServices, setOurServices] = useState([])
+
+  // const serviceData = [
+  //   {
+  //     name: "Residential Interior",
+  //     img: interior1,
+  //   },
+  //   {
+  //     name: "Commercial Interior",
+  //     img: interior2,
+  //   },
+  //   {
+  //     name: "Industrial Interior",
+  //     img: interior3,
+  //   },
+  // ];
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/service`)
+    .then(res => res.json())
+    .then(data => setOurServices(data))
+  }, [ourServices])
 
   return (
     <div className="services-style">
       <div className="container pt-5">
-        <h4 style={{ fontWeight: "700" }} className="text-center text-primary">
+        <h4 style={{ fontWeight: "700", width: "350px", backgroundColor: 'White', padding:'10px'}} className="text-center text-primary mx-auto">
           What We Offer
         </h4>
         <h1 style={{ fontWeight: "700" }} className="text-center">
@@ -36,7 +47,7 @@ const OurServices = () => {
       </div>
       <div className="container w-75">
         <div className="row">
-          {serviceData.map((service) => (
+          {ourServices.map((service) => (
             <Services service={service} />
           ))}
         </div>
