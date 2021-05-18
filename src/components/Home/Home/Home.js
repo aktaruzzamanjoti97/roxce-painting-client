@@ -1,6 +1,7 @@
 import { faWhatsappSquare } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import AboutUs from "../AboutUs/AboutUs";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import OurServices from "../OurServices/OurServices";
 import Testimonials from "../Testimonials/Testimonials";
@@ -16,6 +17,7 @@ const Home = () => {
       <OurServices />
       <WorkingSkills />
       <Testimonials />
+      <Footer />
     </div>
   );
 };
