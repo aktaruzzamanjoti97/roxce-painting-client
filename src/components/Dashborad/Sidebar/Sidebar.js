@@ -4,6 +4,7 @@ import { faCog, faGripHorizontal, faHome, faSignOutAlt, faUserPlus, faUsers } fr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
+import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = () => {
     return (
@@ -19,6 +20,11 @@ const Sidebar = () => {
                     <Link to="/home" className="text-brand text-decoration-none">
                         <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                     </Link>
+                </li>
+                <li>
+                        <Link to="/bookingList" className="text-brand text-decoration-none">
+                            <FontAwesomeIcon icon={faAccessibleIcon} /> <span>Booking List</span>
+                        </Link>
                 </li>
                  <div>
                     <li>

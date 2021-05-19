@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
           {/* <FooterCol key={1} menuTitle={"About Roxce"} menuItems={noNamed}/> */}
         </div>
-        <div className="copyRight text-center">
+        <div className="copyRight text-center text-white">
           <p>CopyRight {new Date().getFullYear()} All rights reserved</p>
         </div>
       </div>

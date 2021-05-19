@@ -10,6 +10,8 @@ import Dashboard from "./components/Dashborad/Dashboard/Dashboard";
 import ManageProducts from "./components/Dashborad/ManageProducts/ManageProducts";
 import Shipment from "./components/Dashborad/Shipment/Shipment";
 import Checkout from "./components/Dashborad/Checkout/Checkout";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import BookingList from "./components/Dashborad/BookingList/BookingList";
 
 export const UserContext = createContext();
 
@@ -37,11 +39,14 @@ function App() {
           <Route path="/manageService">
             <ManageProducts />
           </Route>
-          <Route path="/shipment/:id">
+          <Route path="/shipment">
             <Shipment />
           </Route>
-          <Route path='/checkout/:id'>
+          <PrivateRoute path='/checkout/:id'>
             <Checkout />
+          </PrivateRoute>
+          <Route path='/bookingList'>
+            <BookingList />
           </Route>
         </Switch>
       </Router>
