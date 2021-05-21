@@ -12,7 +12,10 @@ const OurServices = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/service`)
     .then(res => res.json())
-    .then(data => setOurServices(data))
+    .then(data => {
+      console.log(data);
+      setOurServices(data)
+    })
   }, []);
 
 
