@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 const ManageProduct = ({ services }) => {
 
     const handleDeleteProduct = (id) =>{
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://desolate-badlands-10830.herokuapp.com/delete/${id}`,{
           method: "DELETE"
         })
         .then(res => res.json())

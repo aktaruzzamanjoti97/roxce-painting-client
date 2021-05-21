@@ -22,7 +22,7 @@ const AddService = () => {
     };
     console.log(eventData);
 
-    const url = `http://localhost:5000/addService`;
+    const url = `https://desolate-badlands-10830.herokuapp.com/addService`;
 
     if (imageURL !== null) {
       fetch(url, {

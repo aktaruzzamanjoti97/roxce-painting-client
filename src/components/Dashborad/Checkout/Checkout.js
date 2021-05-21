@@ -11,7 +11,7 @@ const Checkout = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/oneService/${id}`)
+        fetch(`https://desolate-badlands-10830.herokuapp.com/oneService/${id}`)
         .then(res => res.json())
         .then(data => {
             setCheckout(data[0]);

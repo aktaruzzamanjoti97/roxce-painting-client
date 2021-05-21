@@ -13,7 +13,7 @@ const SingleOrder = () => {
     const { orderId } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleOrder/${orderId}`)
+        fetch(`https://desolate-badlands-10830.herokuapp.com/singleOrder/${orderId}`)
         .then(res => res.json())
         .then(data => setSingleOrder(data[0]))
     },[]);
@@ -29,7 +29,7 @@ const SingleOrder = () => {
        console.log(id);
         console.log('hit inside');
         console.log(update);
-        fetch(`http://localhost:5000/updateStatus/${id}`,{
+        fetch(`https://desolate-badlands-10830.herokuapp.com/updateStatus/${id}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ const AllBookingsChild = ({ orders }) => {
   // const [newOrder, setNewOrder] = useState([])
 
   const loadData = () => {
-    fetch(`http://localhost:5000/orderList`)
+    fetch(`https://desolate-badlands-10830.herokuapp.com/orderList`)
         .then(res => res.json())
         .then(data =>{
             console.log(data);

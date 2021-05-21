@@ -20,7 +20,7 @@ const Shipment = () => {
     setLoggedInUser(newData);
 
     if (loggedInUser.shipmentInfo) {
-      fetch(`http://localhost:5000/placeOrder`, {
+      fetch(`https://desolate-badlands-10830.herokuapp.com/placeOrder`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

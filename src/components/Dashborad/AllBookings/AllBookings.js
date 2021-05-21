@@ -7,7 +7,7 @@ const AllBookings = () => {
   const [orders, setOrders] = useState([]);
 
   const loadData = () => {
-    fetch(`http://localhost:5000/orderList`)
+    fetch(`https://desolate-badlands-10830.herokuapp.com/orderList`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,7 +24,7 @@ const AllBookings = () => {
     // console.log(document.getElementById(`status-${id}`));
     // console.log(updateStat);
 
-    fetch(`http://localhost:5000/updateStatus/${id}`, {
+    fetch(`https://desolate-badlands-10830.herokuapp.com/updateStatus/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: updateStat }),
