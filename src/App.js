@@ -12,6 +12,8 @@ import Shipment from "./components/Dashborad/Shipment/Shipment";
 import Checkout from "./components/Dashborad/Checkout/Checkout";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import BookingList from "./components/Dashborad/BookingList/BookingList";
+import AllBookings from "./components/Dashborad/AllBookings/AllBookings";
+import SingleOrder from "./components/Dashborad/SingleOrder/SingleOrder";
 
 export const UserContext = createContext();
 
@@ -48,6 +50,12 @@ function App() {
           <Route path='/bookingList'>
             <BookingList />
           </Route>
+          <Route exact path='/allBookings'>
+            <AllBookings />
+          </Route>
+          {/* <Route path='/allBookings/:orderId'>
+            <SingleOrder />
+          </Route> */}
         </Switch>
       </Router>
     </UserContext.Provider>

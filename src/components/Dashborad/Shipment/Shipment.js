@@ -16,6 +16,7 @@ const Shipment = () => {
   const onSubmit = (data) => {
     const newData = { ...loggedInUser };
     newData.shipmentInfo = data;
+    newData.status = "pending";
     setLoggedInUser(newData);
 
     if (loggedInUser.shipmentInfo) {
@@ -34,7 +35,9 @@ const Shipment = () => {
           }
         });
     } else {
-      alert("Shipment Information Saving. Please wait and then press submit button");
+      alert(
+        "Shipment Information Saving. Please wait and then press submit button"
+      );
     }
   };
 
@@ -68,7 +71,7 @@ const Shipment = () => {
           />
 
           <label htmlFor="service">Service Name</label>
-          <input className="form-control" {...register("service")} required />
+          <input defaultValue={loggedInUser.selectedService?.name} className="form-control" {...register("service")} required />
           <br />
 
           <input className="btn btn-info" type="submit" />

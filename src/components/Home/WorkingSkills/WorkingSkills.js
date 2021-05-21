@@ -15,7 +15,7 @@ const WorkingSkills = () => {
             <h1>Best Working Skills</h1>
             <h1>& Experience</h1>
           </div>
-          <p class="verticalLine px-4 my-4">
+          <p className="verticalLine px-4 my-4">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
             nihil, obcaecati eaque excepturi reprehenderit iure accusantium vero
             ipsam et dolorum? Atque sed sapiente sit temporibus alias neque

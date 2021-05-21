@@ -13,7 +13,7 @@ const AboutUs = () => {
         </div>
         <div className="col-md-6 offset-md-1">
           <div className="d-flex">
-            <hr class="new4" />
+            <hr className="new4" />
             <h6 style={{ color: "lightsalmon" }} className="m-2">
               About Us
             </h6>

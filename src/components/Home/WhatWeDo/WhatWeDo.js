@@ -11,7 +11,7 @@ const WhatWeDo = () => {
       <div className="row">
         <div className="col-md-5">
           <div className="d-flex">
-            <hr class="new4"></hr>
+            <hr className="new4"></hr>
             <h6 style={{ color: "lightsalmon" }} className="m-2">
               What We Do
             </h6>
