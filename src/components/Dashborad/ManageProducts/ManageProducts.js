@@ -11,7 +11,7 @@ const ManageProducts = () => {
         fetch(`https://desolate-badlands-10830.herokuapp.com/service`)
         .then(res => res.json())
         .then(data => setServices(data))
-    }, [])
+    }, [services])
 
     return (
         <div className="row">

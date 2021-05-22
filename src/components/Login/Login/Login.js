@@ -5,6 +5,8 @@ import firebaseConfig from './firebase.config';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useContext } from "react";
 import { UserContext } from "../../../App";
+import { Button } from "react-bootstrap";
+import logo from '../../../images/palette.png';
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -49,8 +51,12 @@ const Login = () => {
         <div className="row align-items-center" style={{ height: "100vh" }}>
           <div className="col-md-3 mx-auto shadow">
             <div className="from-group">
-              <h1>Log in with Google</h1>
-              <button style={{width: "100%"}} className="btn btn-danger" onClick={handleGoogleSignIn}>Google Sign in</button>
+             <div className="text-center">
+             <img style={{width: "100px"}} src={logo} alt="" />
+             </div>
+              <h1 className="text-center text-danger">ROXCE</h1>
+              <h3 className="text-center text-primary">Painting <span className="text-warning">Service</span></h3>
+              <Button style={{width: "100%"}} variant="success" onClick={handleGoogleSignIn}>Login with Google</Button>
             </div>
           </div>
           {/* <div className="col-md-6 d-none d-md-block align-self-end">
