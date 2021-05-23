@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../App";
+import { useHistory } from "react-router";
 
 const Shipment = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  let history = useHistory();
 
   const {
     register,
@@ -19,26 +21,28 @@ const Shipment = () => {
     newData.status = "pending";
     setLoggedInUser(newData);
 
-    if (loggedInUser.shipmentInfo) {
-      fetch(`https://desolate-badlands-10830.herokuapp.com/placeOrder`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loggedInUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data) {
-            alert("Your Order Placed Successfully");
-          }
-        });
-    } else {
-      alert(
-        "Shipment Information Saving. Please wait and then press submit button"
-      );
-    }
+    history.push('/payment');
+
+    // if (loggedInUser.shipmentInfo) {
+    //   fetch(`https://desolate-badlands-10830.herokuapp.com/placeOrder`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(loggedInUser),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //       if (data) {
+    //         alert("Your Order Placed Successfully");
+    //       }
+    //     });
+    // } else {
+    //   alert(
+    //     "Shipment Information Saving. Please wait and then press submit button"
+    //   );
+    // }
   };
 
   console.log(loggedInUser);

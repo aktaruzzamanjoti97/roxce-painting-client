@@ -5,7 +5,9 @@ const Testimonial = (props) => {
   return (
     <div className="card shadow-sm col-md-4 py-5">
       <div className="card-body text-center">
-        <img className="mx-3" src={img} alt="" width="80" />
+        <div className="text-center">
+        <img src={img} alt="" style={{height: '100px'}} />
+        </div>  
         <p className="card-text text-center pt-3">{quote}</p>
       </div>
       <div className="card-footer d-flex align-items-center">

@@ -14,6 +14,8 @@ import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import BookingList from "./components/Dashborad/BookingList/BookingList";
 import AllBookings from "./components/Dashborad/AllBookings/AllBookings";
 import SingleOrder from "./components/Dashborad/SingleOrder/SingleOrder";
+import Payment from "./components/Dashborad/Payment/Payment";
+import MakeAdmin from "./components/Dashborad/MakeAdmin/MakeAdmin";
 
 export const UserContext = createContext();
 
@@ -53,9 +55,12 @@ function App() {
           <Route exact path='/allBookings'>
             <AllBookings />
           </Route>
-          {/* <Route path='/allBookings/:orderId'>
-            <SingleOrder />
-          </Route> */}
+          <Route path='/payment'>
+            <Payment />
+          </Route>
+          <Route path='/makeAdmin'>
+            <MakeAdmin />
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>
