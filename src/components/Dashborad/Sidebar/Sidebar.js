@@ -53,10 +53,16 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link className="text-brand text-decoration-none" to="/addReview">
+            <FontAwesomeIcon icon={faCog} /> <span>Add Review</span>
+          </Link>
+        </li>
+        <li>
           <Link className="text-brand text-decoration-none" to="/settings">
             <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
           </Link>
         </li>
+        
         {isAdmin && <div>
           <li>
             <Link to="/allBookings" className="text-brand text-decoration-none">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 // import AllBookingsChild from "../AllBookingsChild/AllBookingsChild";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../Dashborad/Sidebar/Sidebar";
 
 const AllBookings = () => {
   const [orders, setOrders] = useState([]);

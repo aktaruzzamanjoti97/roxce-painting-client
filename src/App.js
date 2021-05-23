@@ -5,17 +5,18 @@ import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
 import { createContext } from "react";
 import { useState } from "react";
-import AddService from "./components/Dashborad/AddService/AddService";
+import AddService from "./components/AddService/AddService";
 import Dashboard from "./components/Dashborad/Dashboard/Dashboard";
 import ManageProducts from "./components/Dashborad/ManageProducts/ManageProducts";
 import Shipment from "./components/Dashborad/Shipment/Shipment";
 import Checkout from "./components/Dashborad/Checkout/Checkout";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
-import BookingList from "./components/Dashborad/BookingList/BookingList";
-import AllBookings from "./components/Dashborad/AllBookings/AllBookings";
+import BookingList from "./components/BookingList/BookingList";
+import AllBookings from "./components/AllBookings/AllBookings";
 import SingleOrder from "./components/Dashborad/SingleOrder/SingleOrder";
 import Payment from "./components/Dashborad/Payment/Payment";
-import MakeAdmin from "./components/Dashborad/MakeAdmin/MakeAdmin";
+import MakeAdmin from "./components/MakeAdmin/MakeAdmin";
+import AddReview from "./components/AddReview/AddReview";
 
 export const UserContext = createContext();
 
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path='/makeAdmin'>
             <MakeAdmin />
+          </Route>
+          <Route path='/addReview'>
+            <AddReview />
           </Route>
         </Switch>
       </Router>

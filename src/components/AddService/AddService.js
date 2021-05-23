@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../Dashborad/Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
