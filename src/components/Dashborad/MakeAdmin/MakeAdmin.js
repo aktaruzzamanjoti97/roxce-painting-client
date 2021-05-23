@@ -12,14 +12,19 @@ const MakeAdmin = () => {
   const handleClick = () => {
     console.log("clicked");
 
-    fetch("http://localhost:5000/admin", {
+    fetch("https://desolate-badlands-10830.herokuapp.com/addAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(admin),
-    }).then((res) => (res, "Admin Added"));
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data){
+            alert("Admin Added Successfully");
+        }
+    })
   };
 
-  console.log(admin);
 
   return (
     <div className="container-fluid row">
