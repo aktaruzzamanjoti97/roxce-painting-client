@@ -19,10 +19,9 @@ const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/adminList")
+    fetch("https://desolate-badlands-10830.herokuapp.com/adminList")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const checkAdmin = data.find(
           (checkingPerson) => checkingPerson.email === loggedInUser.email
         );
@@ -62,32 +61,41 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
           </Link>
         </li>
-        
-        {isAdmin && <div>
-          <li>
-            <Link to="/allBookings" className="text-brand text-decoration-none">
-              <FontAwesomeIcon icon={faCalendar} /> <span>All Bookings</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/addService" className="text-brand text-decoration-none">
-              <FontAwesomeIcon icon={faUsers} /> <span>Add Service</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/makeAdmin" className="text-brand text-decoration-none">
-              <FontAwesomeIcon icon={faFileAlt} /> <span>Make Admin</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/manageService"
-              className="text-brand text-decoration-none"
-            >
-              <FontAwesomeIcon icon={faUserPlus} /> <span>Manage Service</span>
-            </Link>
-          </li>
-        </div>}
+
+        {isAdmin && (
+          <div>
+            <li>
+              <Link
+                to="/allBookings"
+                className="text-brand text-decoration-none"
+              >
+                <FontAwesomeIcon icon={faCalendar} /> <span>All Bookings</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/addService"
+                className="text-brand text-decoration-none"
+              >
+                <FontAwesomeIcon icon={faUsers} /> <span>Add Service</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/makeAdmin" className="text-brand text-decoration-none">
+                <FontAwesomeIcon icon={faFileAlt} /> <span>Make Admin</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/manageService"
+                className="text-brand text-decoration-none"
+              >
+                <FontAwesomeIcon icon={faUserPlus} />{" "}
+                <span>Manage Service</span>
+              </Link>
+            </li>
+          </div>
+        )}
       </ul>
       <div>
         <Link to="/" className="text-brand text-decoration-none">

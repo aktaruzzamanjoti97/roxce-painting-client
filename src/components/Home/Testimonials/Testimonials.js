@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import aliza from "../../../images/aliza.png";
-import wilson from "../../../images/wilson.png";
-import ema from "../../../images/ema.png";
 import Testimonial from "../Testimonial/Testimonial";
 
 // Import Swiper styles
