@@ -47,7 +47,7 @@ const Testimonials = () => {
             Testimonial
           </h5>
           <h1>
-            What Our Client says <br /> About Painters{" "}
+            What Our Client says <br /> About <span className="text-brand">ROXCE</span>{" "}
           </h1>
         </div>
         <div className="card-deck row">
