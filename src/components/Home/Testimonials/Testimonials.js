@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,29 +22,20 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 
 const Testimonials = () => {
-  const testimonialData = [
-    {
-      quote:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non architecto nobis, adipisci recusandae repellat accusantium consequuntur, qui nisi deserunt blanditiis mollitia, illo! ",
-      name: "Wilson Harry",
-      from: "California",
-      img: wilson,
-    },
-    {
-      quote:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non architecto nobis, adipisci recusandae repellat accusantium consequuntur, qui nisi deserunt blanditiis mollitia, illo! ",
-      name: "Ema Gomez",
-      from: "California",
-      img: ema,
-    },
-    {
-      quote:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non architecto nobis, adipisci recusandae repellat accusantium consequuntur, qui nisi deserunt blanditiis mollitia, illo! ",
-      name: "Aliza Farari",
-      from: "California",
-      img: aliza,
-    },
-  ];
+
+  const [reviewLists, setReviewLists] = useState([]);
+  
+  
+
+  useEffect(() => {
+    fetch('https://desolate-badlands-10830.herokuapp.com/reviewList')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      setReviewLists(data)
+    })
+  }, [])
+
   return (
     <section className="testimonials my-5">
       <div className="container">
@@ -75,7 +66,7 @@ const Testimonials = () => {
               className="mySwiper"
             >
                 {
-                    testimonialData.map(testimonial =>  <SwiperSlide><Testimonial testimonial={testimonial}/></SwiperSlide>)
+                    reviewLists.map(testimonial =>  <SwiperSlide><Testimonial testimonial={testimonial}/></SwiperSlide>)
                 }
              
               

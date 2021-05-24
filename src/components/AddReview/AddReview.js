@@ -5,6 +5,7 @@ import axios from "axios";
 
 const AddReview = () => {
   const [imageURL, setImageURL] = useState(null);
+  const [addReview, setAddReview] = useState(null);
 
   const {
     register,
@@ -15,37 +16,41 @@ const AddReview = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // const eventData = {
-    //   name: data.name,
-    //   city: data.city,
-    //   lgPrice: data.lgPrice,
-    //   imageURL: imageURL,
-    // };
-    // console.log(eventData);
+    const eventData = {
+      name: data.name,
+      city: data.city,
+      review: addReview.review,
+      imageURL: imageURL
+    };
+    console.log(eventData);
 
     
 
     // const url = `https://desolate-badlands-10830.herokuapp.com/addService`;
+    const url = `https://desolate-badlands-10830.herokuapp.com/addReview`;
 
-    // if (imageURL !== null) {
-    //   fetch(url, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(eventData),
-    //   }).then((res) => console.log("server site responded", res));
-    // } else {
-    //   alert("image uploading, please wait");
-    // }
-    // console.log(imageURL);
-    // setImageURL(null);
+    if (imageURL !== null) {
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(eventData),
+      }).then((res) => console.log("server site responded", res));
+    } else {
+      alert("image uploading, please wait");
+    }
+    console.log(imageURL);
+    setImageURL(null);
   };
 
   const handleChange = (e) => {
-    const textData = e.target.value;
-    
+    const textData = {...addReview};
+    textData[e.target.name] = e.target.value;
+    setAddReview(textData);    
   };
+
+  console.log(addReview);
 
   const handleImageUpload = (event) => {
     console.log(event.target.files[0]);
@@ -64,7 +69,7 @@ const AddReview = () => {
   };
 
   const showAdd = () => {
-    const text = "New Service Added";
+    const text = "Your Review Added. Check User Testimonial and see your review 🥰";
     alert(text);
   };
 
