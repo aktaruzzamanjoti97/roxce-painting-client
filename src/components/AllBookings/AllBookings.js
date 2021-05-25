@@ -21,8 +21,6 @@ const AllBookings = () => {
 
   const handleChange = (id) => {
     const updateStat = document.getElementById(`status-${id}`).value;
-    // console.log(document.getElementById(`status-${id}`));
-    // console.log(updateStat);
 
     fetch(`https://desolate-badlands-10830.herokuapp.com/updateStatus/${id}`, {
       method: "PATCH",

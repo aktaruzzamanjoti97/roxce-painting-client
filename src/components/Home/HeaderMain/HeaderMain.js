@@ -13,7 +13,7 @@ const HeaderMain = () => {
         <div className="text-center">
           <ReactTypingEffect
             text={["| 25 years of experience |"]}
-            cursorRenderer={(cursor) => <h2 className="text-white">{cursor}</h2>}
+            cursorRenderer={(cursor) => <h4 className="text-white">{cursor}</h4>}
             displayTextRenderer={(text, i) => {
               return (
                 <h4 className="text-center">

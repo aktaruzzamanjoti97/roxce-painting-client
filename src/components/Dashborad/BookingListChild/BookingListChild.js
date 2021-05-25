@@ -2,7 +2,7 @@ import React from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const BookingListChild = (props) => {
-  const { name, email, selectedService, paymentInfo, shipmentInfo, status } =
+  const { name, email, selectedService, serviceDate, shipmentInfo, status } =
     props.user;
 
   return (
@@ -56,10 +56,13 @@ const BookingListChild = (props) => {
           <Card.Title>{shipmentInfo.service}</Card.Title>
 
           <Card.Text>
-            Name: <span className="mx-3 text-success">{name}</span>
+            Name: <span className="mx-2 text-success">{name}</span>
           </Card.Text>
           <Card.Text>
-            Shipping Email: <span className="text-danger">{email}</span>
+            Customer Email: <span className="text-danger"><br />{email}</span>
+          </Card.Text>
+          <Card.Text>
+            Servicing Date: <span className="text-info"><br /> {serviceDate}</span>
           </Card.Text>
           
         </Card.Body>
