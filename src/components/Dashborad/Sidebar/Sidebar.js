@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { faCalendar, faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import {
+  faAddressBook,
   faCog,
   faGripHorizontal,
   faHome,
@@ -53,12 +54,7 @@ const Sidebar = () => {
         </li>
         <li>
           <Link className="text-brand text-decoration-none" to="/addReview">
-            <FontAwesomeIcon icon={faCog} /> <span>Add Review</span>
-          </Link>
-        </li>
-        <li>
-          <Link className="text-brand text-decoration-none" to="/settings">
-            <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
+            <FontAwesomeIcon icon={faAddressBook} /> <span>Add Review</span>
           </Link>
         </li>
 
@@ -96,6 +92,11 @@ const Sidebar = () => {
             </li>
           </div>
         )}
+        <li>
+          <Link className="text-brand text-decoration-none">
+            <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
+          </Link>
+        </li>
       </ul>
       <div>
         <Link to="/" className="text-brand text-decoration-none">

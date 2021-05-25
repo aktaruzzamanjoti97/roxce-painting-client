@@ -3,13 +3,16 @@ import "./AboutUs.css";
 import about from "../../../images/about.jpg";
 import ceo from "../../../images/ceo.jpg";
 import signature from "../../../images/signature.jpg";
+import Fade from "react-reveal/Fade";
 
 const AboutUs = () => {
   return (
     <div className="container mt-5 mb-5">
       <div className="row">
         <div className="col-md-4">
-          <img src={about} alt="" />
+          <Fade left>
+            <img src={about} alt="" />
+          </Fade>
         </div>
         <div className="col-md-6 offset-md-1">
           <div className="d-flex">
@@ -18,6 +21,7 @@ const AboutUs = () => {
               About Us
             </h6>
           </div>
+          <Fade right>
           <div className="mt-4">
             <h1>Explore About</h1>
             <h1>Painting Services</h1>
@@ -46,6 +50,7 @@ const AboutUs = () => {
             </div>
             <img style={{ height: "70px" }} src={signature} alt="" />
           </div>
+          </Fade>
         </div>
       </div>
     </div>

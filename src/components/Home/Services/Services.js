@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "./Services.css";
 import { useHistory } from "react-router-dom";
+import Zoom from 'react-reveal/Zoom';
 
 const Services = ({ service }) => {
   let history = useHistory();
@@ -11,6 +12,7 @@ const Services = ({ service }) => {
   }
   return (
     <div className="col-md-4 col-sm-6 col-12 py-3 text-center">
+      <Zoom>
       <div className="rounded box-style" style={{}}>
         <img
           style={{ height: "180px", width: "100%" }}
@@ -24,6 +26,7 @@ const Services = ({ service }) => {
           <Button onClick={() => handleClick(service._id)} variant="success">Get Our Service</Button>
         </div>
       </div>
+      </Zoom>
     </div>
   );
 };
