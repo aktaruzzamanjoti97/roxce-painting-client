@@ -55,7 +55,7 @@ const Login = () => {
              <img style={{width: "100px"}} src={logo} alt="" />
              </div>
               <h1 className="text-center text-danger">ROXCE</h1>
-              <h3 className="text-center text-primary">Painting <span className="text-warning">Service</span></h3>
+              <h3 className="text-center text-primary">Painting <span className="text-secondary">Service</span></h3>
               <Button style={{width: "100%"}} variant="success" onClick={handleGoogleSignIn}>Login with Google</Button>
             </div>
           </div>

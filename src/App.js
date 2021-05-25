@@ -17,6 +17,7 @@ import SingleOrder from "./components/Dashborad/SingleOrder/SingleOrder";
 import Payment from "./components/Dashborad/Payment/Payment";
 import MakeAdmin from "./components/MakeAdmin/MakeAdmin";
 import AddReview from "./components/AddReview/AddReview";
+import Admin from "./components/Admin/Admin";
 
 export const UserContext = createContext();
 
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route path='/addReview'>
             <AddReview />
+          </Route>
+          <Route path='/admin'>
+            <Admin />
           </Route>
         </Switch>
       </Router>
