@@ -1,9 +1,13 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
 import logo from "../../../images/palette.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../App";
 
 const Navigation = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
       <img width="60" src={logo} alt="" />
@@ -19,12 +23,21 @@ const Navigation = () => {
           <Link className="text-white mr-5" to="/dashboard">
             Dashboard
           </Link>
-          <Link className="text-white mr-5" to="/login">
+
+          {loggedInUser.email ? (
+            <>
+              {/* <Nav.Link>{loggedInUser.email}</Nav.Link> */}
+              <Link className="text-white mr-5" to="/login">Logout ({loggedInUser.name})</Link>
+            </>
+          ) : (
+            //  onClick={signOut}
+            <Link className="text-white mr-5" to="/login">
+              Login
+            </Link>
+          )}
+          {/* <Link className="text-white mr-5" to="/login">
             Login
-          </Link>
-          {/* <Nav.Link className="text-white mr-5" eventKey={2} href="#memes">
-            Dank memes
-          </Nav.Link> */}
+          </Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
