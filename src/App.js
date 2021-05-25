@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
 import { createContext } from "react";
@@ -13,7 +13,6 @@ import Checkout from "./components/Dashborad/Checkout/Checkout";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import BookingList from "./components/BookingList/BookingList";
 import AllBookings from "./components/AllBookings/AllBookings";
-import SingleOrder from "./components/Dashborad/SingleOrder/SingleOrder";
 import Payment from "./components/Dashborad/Payment/Payment";
 import MakeAdmin from "./components/MakeAdmin/MakeAdmin";
 import AddReview from "./components/AddReview/AddReview";
@@ -48,25 +47,25 @@ function App() {
           <Route path="/shipment">
             <Shipment />
           </Route>
-          <PrivateRoute path='/checkout/:id'>
+          <PrivateRoute path="/checkout/:id">
             <Checkout />
           </PrivateRoute>
-          <Route path='/bookingList'>
+          <Route path="/bookingList">
             <BookingList />
           </Route>
-          <Route exact path='/allBookings'>
+          <Route exact path="/allBookings">
             <AllBookings />
           </Route>
-          <Route path='/payment'>
+          <Route path="/payment">
             <Payment />
           </Route>
-          <Route path='/makeAdmin'>
+          <Route path="/makeAdmin">
             <MakeAdmin />
           </Route>
-          <Route path='/addReview'>
+          <Route path="/addReview">
             <AddReview />
           </Route>
-          <Route path='/admin'>
+          <Route path="/admin">
             <Admin />
           </Route>
         </Switch>

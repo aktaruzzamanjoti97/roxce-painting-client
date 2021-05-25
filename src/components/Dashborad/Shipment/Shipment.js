@@ -61,7 +61,6 @@ const Shipment = () => {
           />
 
           <label htmlFor="email">Email</label>
-
           <input
             className="form-control"
             defaultValue={loggedInUser.email}

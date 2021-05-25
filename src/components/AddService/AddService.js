@@ -6,12 +6,7 @@ import axios from "axios";
 const AddService = () => {
   const [imageURL, setImageURL] = useState(null);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     const eventData = {
@@ -31,11 +26,9 @@ const AddService = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(eventData),
-      })
-      .then(res => console.log('server site responded', res))
-    }
-    else{
-      alert('image uploading, please wait')
+      }).then((res) => console.log("server site responded", res));
+    } else {
+      alert("image uploading, please wait");
     }
     console.log(imageURL);
     setImageURL(null);
@@ -57,10 +50,10 @@ const AddService = () => {
       });
   };
 
-  const showAdd = () =>{
+  const showAdd = () => {
     const text = "New Service Added";
     alert(text);
-  }
+  };
 
   return (
     <div className="container-fluid row">
@@ -116,7 +109,11 @@ const AddService = () => {
             </div>
           </div>
           <div className="text-end">
-            <input onClick={showAdd} className="btn btn-warning" type="submit" />
+            <input
+              onClick={showAdd}
+              className="btn btn-warning"
+              type="submit"
+            />
           </div>
         </form>
       </div>

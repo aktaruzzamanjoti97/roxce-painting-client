@@ -7,12 +7,7 @@ const AddReview = () => {
   const [imageURL, setImageURL] = useState(null);
   const [addReview, setAddReview] = useState(null);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -20,13 +15,10 @@ const AddReview = () => {
       name: data.name,
       city: data.city,
       review: addReview.review,
-      imageURL: imageURL
+      imageURL: imageURL,
     };
     console.log(eventData);
 
-    
-
-    // const url = `https://desolate-badlands-10830.herokuapp.com/addService`;
     const url = `https://desolate-badlands-10830.herokuapp.com/addReview`;
 
     if (imageURL !== null) {
@@ -45,9 +37,9 @@ const AddReview = () => {
   };
 
   const handleChange = (e) => {
-    const textData = {...addReview};
+    const textData = { ...addReview };
     textData[e.target.name] = e.target.value;
-    setAddReview(textData);    
+    setAddReview(textData);
   };
 
   console.log(addReview);
@@ -69,7 +61,8 @@ const AddReview = () => {
   };
 
   const showAdd = () => {
-    const text = "Your Review Added. Check User Testimonial and see your review 🥰";
+    const text =
+      "Your Review Added. Check User Testimonial and see your review 🥰";
     alert(text);
   };
 

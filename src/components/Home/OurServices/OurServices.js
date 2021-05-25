@@ -25,7 +25,7 @@ const OurServices = () => {
         <h4 style={{ fontWeight: "700", width: "350px", backgroundColor: 'White', padding:'10px'}} className="text-center text-primary mx-auto">
           What We Offer
         </h4>
-        <h1 style={{ fontWeight: "700" }} className="text-center">
+        <h1 style={{ fontWeight: "700" }} className="text-center text-dark">
           We Help You For Made Your
         </h1>
         <h1 style={{ fontWeight: "700" }} className="text-center">
