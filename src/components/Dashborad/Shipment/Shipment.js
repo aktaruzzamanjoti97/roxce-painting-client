@@ -22,27 +22,7 @@ const Shipment = () => {
     setLoggedInUser(newData);
 
     history.push('/payment');
-
-    // if (loggedInUser.shipmentInfo) {
-    //   fetch(`https://desolate-badlands-10830.herokuapp.com/placeOrder`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(loggedInUser),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       if (data) {
-    //         alert("Your Order Placed Successfully");
-    //       }
-    //     });
-    // } else {
-    //   alert(
-    //     "Shipment Information Saving. Please wait and then press submit button"
-    //   );
-    // }
+    
   };
 
   console.log(loggedInUser);
@@ -53,7 +33,9 @@ const Shipment = () => {
         <Sidebar />
       </div>
       <div className="col-md-7 mt-3">
-        <form onSubmit={handleSubmit(onSubmit)}>
+
+        <h1 className="text-primary">Place Your Order</h1>
+        <form className="py-4" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name">Name</label>
           <input
             className="form-control"

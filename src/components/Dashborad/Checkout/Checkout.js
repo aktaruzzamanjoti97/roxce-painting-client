@@ -30,8 +30,8 @@ const Checkout = () => {
         <Sidebar />
       </div>
       <div className="col-md-10">
-          <h1 className="text-warning mb-4">Your Order</h1>
-        <div className="checkout-style">
+          <h1 className="text-info mb-4">CheckOut</h1>
+        {/* <div className="checkout-style">
           
           <img style={{width: '300px'}} src={checkout.imageURL} alt="" />
           <h1>{checkout.name}</h1>
@@ -40,7 +40,27 @@ const Checkout = () => {
           <Link to={`/shipment`}>
             <Button variant="danger">Go to shipment page</Button>
           </Link>
+        </div> */}
+        <div className="row">
+          <div className="col-md-4">
+          <div className="rounded box-style" style={{}}>
+        <img
+          style={{ height: "180px", width: "100%" }}
+          src={checkout.imageURL}
+          alt=""
+        />
+        <div style={{ margin: "15px", padding: "15px" }} className="w-60">
+          <h4>{checkout.name}</h4>
+          <p>Small Area: $ {checkout.smPrice}</p>
+          <p>Large Area: $ {checkout.lgPrice}</p>
+          <Link to={`/shipment`}>
+            <Button variant="danger">Go to shipment page</Button>
+          </Link>
         </div>
+      </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

@@ -27,10 +27,11 @@ const SimplePayment = () => {
       setPaymentError(error.message);
     } else {
       console.log("[PaymentMethod]", paymentMethod);
-      setPaymentSuccess(paymentMethod.id);
+     
       const newData = { ...loggedInUser };
       newData.paymentInfo = paymentMethod;
       setLoggedInUser(newData);
+      setPaymentSuccess(paymentMethod.id);
 
       if (paymentMethod.id) {
         fetch(`https://desolate-badlands-10830.herokuapp.com/placeOrder`, {
@@ -52,6 +53,7 @@ const SimplePayment = () => {
       }
     }
   };
+  console.log(loggedInUser);
 
   return (
     <div>
