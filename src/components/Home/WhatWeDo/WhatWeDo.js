@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 
 const WhatWeDo = () => {
   return (
-    <div className="container mt-5">
+    <div className="container my-5">
       <div className="row">
         <div className="col-md-5">
           <LightSpeed left>

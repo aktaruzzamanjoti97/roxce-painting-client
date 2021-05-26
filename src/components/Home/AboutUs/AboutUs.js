@@ -7,7 +7,7 @@ import Fade from "react-reveal/Fade";
 
 const AboutUs = () => {
   return (
-    <div className="container mt-5 mb-5">
+    <div className="container my-5">
       <div className="row">
         <div className="col-md-4">
           <Fade left>

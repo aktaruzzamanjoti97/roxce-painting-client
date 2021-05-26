@@ -7,7 +7,7 @@ import Bounce from "react-reveal/Bounce";
 const WorkingSkills = () => {
   return (
     <div className="container">
-      <div className="row pt-5 mt-2">
+      <div className="row py-5 mt-2">
         <div className="col-md-6">
           <Bounce>
             <h4 className="text-primary">Best Skills</h4>
